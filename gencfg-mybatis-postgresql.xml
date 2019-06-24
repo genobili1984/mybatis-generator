@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<!-- 生成前需要将数据库驱动依赖包手动添加到classpath,maven导入的不行 -->
+	<classPathEntry
+		location="/Users/genobilimao/Desktop/haihuadao/aa/postgresql-42.1.4.jar" />
+	<context id="context" targetRuntime="MyBatis3"
+		defaultModelType="conditional">
+		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="Example$" />
+			<property name="replaceString" value="Criteria" />
+		</plugin>
+		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+		<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+		<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="org.postgresql.Driver"
+			connectionURL="jdbc:postgresql://10.101.72.53:5432/hdsc_db" userId="hdsc_user_tm"
+			password="ZcqRw9yJ" />
+		<javaModelGenerator targetPackage="com.eg.egsc.egc.parkinglotcomponent.mapper.entity"
+			targetProject="mm" />
+		<sqlMapGenerator targetPackage="com.eg.egsc.egc.parkinglotcomponent.mapper"
+			targetProject="mm" />
+		<javaClientGenerator targetPackage="com.eg.egsc.egc.parkinglotcomponent.mapper"
+			targetProject="mm" type="XMLMAPPER" />
+		<!-- <table schema="DEMO" tableName="%" /> -->
+		<table tableName="theater_repertoire_info">
+			<property name="runtimeSchema" value="&quot;pl&quot;" />
+		</table>
+	       <!--	<table tableName="park_pay_detail">
+			<property name="runtimeSchema" value="&quot;pl&quot;" />
+		</table>  -->
+	</context>
+</generatorConfiguration>
